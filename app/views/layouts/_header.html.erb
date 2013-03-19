@@ -10,7 +10,8 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">One Month Rails</a>
+      <!--<a class="brand" href="#">One Month Rails</a>-->
+      <%= link_to "One Month Rails", root_path, class: "brand" %>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
@@ -20,7 +21,40 @@
 					<li><%= link_to "About Us", about_path %></li>
 				</ul>
 				<ul class="nav pull-right">
-	      	<li><%= link_to "Login", "#" %></li>
+          <!--<% if user_signed_in? %>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %> 
+            <li><%= link_to "Login", new_user_session_path %></li>
+          <% end %>-->
+          <!--<li>
+            <form class="navbar-form">
+              <input type="text" class="span2">
+            </form>
+          </li>-->
+          <li>
+            <% if user_signed_in? %>
+              <div class="btn-group">
+                <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                </ul>
+              </div>
+            <% else %>
+              <div class="btn-group">
+                <button class="btn"><%= link_to "Login", new_user_session_path %></button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Forgot Password", "#" %></li>
+                </ul>
+              </div>
+            <% end %>
+          </li>
+          <!--<li><%= link_to "Login", "#" %></li>-->
 				</ul>
       </div>
  
