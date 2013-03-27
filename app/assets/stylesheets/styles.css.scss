@@ -1,15 +1,13 @@
 $baseFontFamily: Futura;
 @import url(http://fonts.googleapis.com/css?family=Futura);
 
-$navbarBackgroundHighlight: white;
-$navbarBackground: red;
+$bgblack: #30292B;
+$bggray: #7F7F7F;
 
-$navbarLinkColor: purple;
 
-/*.navbar-inner {
-	@include box-shadow(none !important);
-	border: 0;
-}*/
+$navbarBackground: $bgblack;
+
+$navbarLinkColor: black;
 
 @import 'bootstrap';
 @import 'bootstrap-responsive';
@@ -20,8 +18,8 @@ body {
 
 .footer {
 	margin-top: 50px;
-	color: $grayLight;
+	color: $bgblack;
 	a {
-		color: $gray;
+		color: $bggray;
 	}
 }
