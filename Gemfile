@@ -7,7 +7,6 @@ gem 'devise'
 gem 'webrick', '1.3.1'
 gem 'simple_form'
 gem 'paperclip', '=3.0.4'
-gem 'cocaine', '=0.3.2'
 
 group :production do
 	gem 'pg'
